@@ -2,7 +2,6 @@ package com.example.assessmenttask.di.app
 
 import android.app.Application
 import android.content.Context
-import com.google.gson.Gson
 import com.islam.easycashtask.domain.di.RetrofitQ
 import com.islam.easycashtask.domain.UrlProvider
 import com.islam.easycashtask.model.competition.CompetitionAPI
@@ -13,7 +12,6 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
