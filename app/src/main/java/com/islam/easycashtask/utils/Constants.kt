@@ -9,7 +9,3 @@ object Constants {
 
 
 }
-
-object ApiParameters {
-    const val ACCEPT = "Accept"
-}
