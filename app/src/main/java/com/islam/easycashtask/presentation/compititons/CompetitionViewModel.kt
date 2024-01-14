@@ -28,7 +28,7 @@ class CompetitionViewModel @Inject constructor(
         }
     }
 
-    private fun loadCompetitions() {
+     fun loadCompetitions() {
         viewModelScope.launch(Dispatchers.IO) {
             val response: CompetitionList = getCompetitions()
             _state.update { oldState ->

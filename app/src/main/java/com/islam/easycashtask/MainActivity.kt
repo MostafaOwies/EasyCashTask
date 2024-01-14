@@ -7,11 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.compose.rememberNavController
-import com.islam.easycashtask.utils.ui.theme.EasyCashTaskTheme
-import com.islam.easycashtask.presentation.compititons.CompetitionViewModel
 import com.islam.easycashtask.utils.navigations.NavGraph
+import com.islam.easycashtask.utils.ui.theme.EasyCashTaskTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,16 +18,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             EasyCashTaskTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
-                    val competitionViewModel = hiltViewModel<CompetitionViewModel>()
-
-                    NavGraph(
-                        navController = navController,
-                        competitionViewModel = competitionViewModel
-                    )
+                    NavGraph()
                 }
             }
         }
