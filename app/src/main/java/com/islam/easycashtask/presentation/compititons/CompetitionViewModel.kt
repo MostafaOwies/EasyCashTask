@@ -28,13 +28,16 @@ class CompetitionViewModel @Inject constructor(
         }
     }
 
-     fun loadCompetitions() {
+    private fun loadCompetitions() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response: CompetitionList = getCompetitions()
+            val response: CompetitionList = getCompetitions(
+                serial = 26,
+                transCode = 2488,
+                transYear = 2024
+            )
             _state.update { oldState ->
                 oldState.copy(
-                    competitions = response.competitions,
-                    competition = response.competition
+                    competition = response.data,
                 )
             }
         }

@@ -34,7 +34,7 @@ fun CompetitionDetailsScreen(competitionId: Int) {
     competitionViewModel.onEvent(CompetitionEvent.LoadCompetitions)
     val state = competitionViewModel.state.collectAsState().value
 
-    val competition = state.competitions.firstOrNull { competitionId == it.id }
+   /* val competition = state.competitions.firstOrNull { competitionId == it.id }
 
     Log.i(TAG, "CompetitionDetailsScreen: $competition")
 
@@ -376,5 +376,5 @@ fun CompetitionDetailsScreen(competitionId: Int) {
                 }
             }
         }
-    }
+    }*/
 }

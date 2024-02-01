@@ -36,7 +36,7 @@ fun CompetitionCard(
                     .clickable(onClick = { onCompetitionClick(competition) }),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            AsyncImage(
+          /*  AsyncImage(
                     modifier = Modifier
                             .padding(all = 8.dp)
                             .width(70.dp),
@@ -62,7 +62,7 @@ fun CompetitionCard(
                         maxLines = 6,
                         overflow = TextOverflow.Ellipsis
                 )
-            }
+            }*/
         }
     }
 

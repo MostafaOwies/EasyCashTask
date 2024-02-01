@@ -4,6 +4,10 @@ import com.islam.easycashtask.model.competition.CompetitionList
 
 interface HomeRepoI {
 
-    suspend fun getCompetition(): CompetitionList
+    suspend fun getCompetition(
+        serial: Int,
+        transCode: Int,
+        transYear: Int
+    ): CompetitionList
 
 }

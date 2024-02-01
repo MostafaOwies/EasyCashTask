@@ -25,9 +25,9 @@ fun NavGraph() {
 
             CompetitionsScreen(
                     onCompetitionClick = { competition ->
-                        val id = competition.id
+                       /* val id = competition.id
 
-                        navController.navigate("$COMPETITION_DETAILS_SCREEN/$id")
+                        navController.navigate("$COMPETITION_DETAILS_SCREEN/$id")*/
                     }
             )
         }

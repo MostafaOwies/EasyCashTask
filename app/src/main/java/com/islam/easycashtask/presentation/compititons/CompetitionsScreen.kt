@@ -20,7 +20,7 @@ import com.islam.easycashtask.model.competition.Competition
 
 @Composable
 fun CompetitionsScreen(
-        onCompetitionClick: (Competition) -> Unit
+    onCompetitionClick: (Competition) -> Unit
 
 ) {
 
@@ -28,16 +28,16 @@ fun CompetitionsScreen(
     competitionViewModel.onEvent(CompetitionEvent.LoadCompetitions)
     val state = competitionViewModel.state.collectAsState().value
 
-    Log.d(ContentValues.TAG, "HomeScreen: ${state.competitions}")
+    Log.d(ContentValues.TAG, "HomeScreen: ${state.competition}")
 
 
     Surface(
-            modifier = Modifier
-                    .fillMaxSize(),
-            color = MaterialTheme.colorScheme.surfaceColorAtElevation(5.dp),
+        modifier = Modifier
+            .fillMaxSize(),
+        color = MaterialTheme.colorScheme.surfaceColorAtElevation(5.dp),
     ) {
 
-        LazyColumn(
+        /*LazyColumn(
                 modifier = Modifier
                         .background(MaterialTheme.colorScheme.surface)
                         .padding(all = 12.dp),
@@ -46,13 +46,12 @@ fun CompetitionsScreen(
 
             items(
                     items = state.competitions,
-                    key = { it.id }
+                    key = { *//*it.id*//* }
             ) {
                 CompetitionCard(
                         competition = it,
                         onCompetitionClick = onCompetitionClick
                 )
-            }
-        }
+            }*/
     }
 }

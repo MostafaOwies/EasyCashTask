@@ -23,14 +23,14 @@ class AppModule {
     fun provideRetrofit(urlProvider: UrlProvider): Retrofit {
         return Retrofit.Builder()
             .baseUrl(urlProvider.getBaseUrl())
-            .client(
+            /*.client(
                 OkHttpClient.Builder().addInterceptor { chain ->
                     val request = chain.request().newBuilder()
                         .addHeader("X-Auth-Token", "be846a379d404a53ad0f6099bca94f4e")
                         .build()
                     chain.proceed(request)
                 }.build()
-            )
+            )*/
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

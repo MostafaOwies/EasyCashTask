@@ -6,8 +6,16 @@ import javax.inject.Inject
 
 class GetCompetitions @Inject constructor(
     private val homeRepoI: HomeRepoI
-){
-    suspend operator fun invoke(): CompetitionList {
-        return homeRepoI.getCompetition()
+) {
+    suspend operator fun invoke(
+        serial: Int,
+        transCode: Int,
+        transYear: Int
+    ): CompetitionList {
+        return homeRepoI.getCompetition(
+            serial = serial,
+            transCode = transCode,
+            transYear = transYear
+        )
     }
 }

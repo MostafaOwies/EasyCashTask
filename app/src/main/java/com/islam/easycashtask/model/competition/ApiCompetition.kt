@@ -1,28 +1,31 @@
 package com.islam.easycashtask.model.competition
 
-import com.islam.easycashtask.model.Area
-import com.islam.easycashtask.model.CurrentSeason
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 
 @JsonClass(generateAdapter = true)
+data class ApiInstallationPaymentParams(
+        @field:Json(name = "serial") val serial: Int?,
+        @field:Json(name = "transcode") val transCode: Int?,
+        @field:Json(name = "transyear") val transYear: Int?,
+)
+
+@JsonClass(generateAdapter = true)
 data class ApiCompetitionList(
 
-        @field:Json(name = "competition") val competition: ApiCompetition?,
-        @field:Json(name = "competitions") val competitions: List<ApiCompetition>?,
+        @field:Json(name = "message") val message: String?,
+        @field:Json(name = "data") val data: ApiCompetition?,
 )
 
 @JsonClass(generateAdapter = true)
 data class ApiCompetition(
-        @field:Json(name = "area") val area: Area?,
-        @field:Json(name = "code") val code: String?,
-        @field:Json(name = "currentSeason") val currentSeason: CurrentSeason?,
-        @field:Json(name = "emblem") val emblem: String?,
-        @field:Json(name = "id") val id: Int?,
-        @field:Json(name = "lastUpdated") val lastUpdated: String?,
-        @field:Json(name = "name") val name: String?,
-        @field:Json(name = "numberOfAvailableSeasons") val numberOfAvailableSeasons: Int?,
-        @field:Json(name = "plan") val plan: String?,
-        @field:Json(name = "type") val type: String?
+        @field:Json(name = "deviceName") val deviceName: String?,
+        @field:Json(name = "devicePrice") val devicePrice: String?,
+        @field:Json(name = "paymentMethod") val paymentMethod: String?,
+        @field:Json(name = "amountOfInstallement") val amountOfInstallment: String?,
+        @field:Json(name = "numberOfInstallement") val numberOfInstallment: String?,
+        @field:Json(name = "depositWhenInstallement") val depositWhenInstallment: String?,
+        @field:Json(name = "depositCollecting") val depositCollecting: String?,
+        @field:Json(name = "ernast") val ernast: String?,
 )
