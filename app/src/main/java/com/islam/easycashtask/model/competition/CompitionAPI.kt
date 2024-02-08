@@ -11,10 +11,4 @@ interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
     @POST(Constants.INSTALLATION)
     suspend fun getCompetitions(@Body apiInstallationPaymentParams: ApiInstallationPaymentParams): ApiCompetitionList
-
-    @Headers("${ApiParameters.ACCEPT}: application/json")
-    @GET(Constants.CHECK_WORK_STATE)
-    suspend fun checkWorkState(): ApiWorkState
-
-
 }

@@ -28,8 +28,7 @@ fun CompetitionsScreen(
     competitionViewModel.onEvent(CompetitionEvent.LoadCompetitions)
     val state = competitionViewModel.state.collectAsState().value
 
-    Log.d(ContentValues.TAG, "HomeScreen: ${state.workStartedAt}")
-    Log.d(ContentValues.TAG, "HomeScreen: ${state.workStatus}")
+    Log.d(ContentValues.TAG, "HomeScreen: ${state.competition}")
 
 
     Surface(

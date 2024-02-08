@@ -1,17 +1,11 @@
 package com.islam.easycashtask.presentation.compititons
 
 import com.islam.easycashtask.model.competition.Competition
-import com.islam.easycashtask.model.competition.EndWorkData
-import com.islam.easycashtask.model.competition.WorkState
-import com.islam.easycashtask.model.competition.WorkStateData
-import com.islam.easycashtask.model.competition.WorkStateDetails
+import com.islam.easycashtask.model.competition.CompetitionList
 
 data class CompetitionViewState(
-    val competition: Competition? = null,
+    val competition: CompetitionList? = null,
     val competitions: List<Competition>? = emptyList(),
-    val workStatus : WorkStateData? = null,
-    val workStartedAt: WorkStateDetails? = null,
-    val workEndedAt: String = "",
 
     ) {
 
