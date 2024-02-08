@@ -34,7 +34,7 @@ class CompetitionViewModel @Inject constructor(
             val response = getCompetitions()
             _state.update {oldState ->
                 oldState.copy(
-                    workStatus = response.data,
+                    workStatus = response,
                     workStartedAt = response.data.details,
                 )
             }

@@ -33,6 +33,7 @@ data class ApiCompetition(
 @JsonClass(generateAdapter = true)
 data class ApiWorkState(
         @field:Json(name = "message") val message: String?,
+        @field:Json(name = "status") val status: String?,
         @field:Json(name = "data") val data: ApiWorkStateData?,
 )
 

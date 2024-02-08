@@ -20,6 +20,7 @@ data class Competition(
 
 data class WorkState(
         val message: String,
+        val status :String,
         val data: WorkStateData,
 )
 

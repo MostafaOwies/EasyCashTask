@@ -9,7 +9,7 @@ import com.islam.easycashtask.model.competition.WorkStateDetails
 data class CompetitionViewState(
     val competition: Competition? = null,
     val competitions: List<Competition>? = emptyList(),
-    val workStatus : WorkStateData? = null,
+    val workStatus : WorkState? = null,
     val workStartedAt: WorkStateDetails? = null,
     val workEndedAt: String = "",
 
