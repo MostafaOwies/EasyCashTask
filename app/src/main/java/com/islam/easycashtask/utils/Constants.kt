@@ -7,6 +7,7 @@ object Constants {
     const val COMPETITION_DETAILS_SCREEN = "competitionDetailsScreen"
     const val COMPETITION_SCREEN = "competitionScreen"
     const val CHECK_WORK_STATE: String = "Work/CheckStartWork"
+    const val RETURN_ORDER: String = "Visit/ReturnOrder"
 
 }
 

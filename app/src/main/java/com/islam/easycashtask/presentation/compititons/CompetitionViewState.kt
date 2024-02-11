@@ -12,6 +12,7 @@ data class CompetitionViewState(
     val workStatus : WorkStateData? = null,
     val workStartedAt: WorkStateDetails? = null,
     val workEndedAt: String = "",
+    val returnMessage :String? = null
 
     ) {
 

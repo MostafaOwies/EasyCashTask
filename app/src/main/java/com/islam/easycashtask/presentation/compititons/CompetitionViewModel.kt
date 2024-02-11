@@ -31,11 +31,17 @@ class CompetitionViewModel @Inject constructor(
 
     private fun loadCompetitions() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getCompetitions()
+            val response = getCompetitions(
+                customerId = 114092,
+                code = 347,
+                serial = 14,
+                year = 2024,
+                hourCode = 32
+            )
             _state.update {oldState ->
                 oldState.copy(
-                    workStatus = response.data,
-                    workStartedAt = response.data.details,
+                    returnMessage = response,
+
                 )
             }
         }

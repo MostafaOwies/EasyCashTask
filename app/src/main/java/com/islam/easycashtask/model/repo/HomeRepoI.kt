@@ -5,12 +5,12 @@ import com.islam.easycashtask.model.competition.WorkState
 
 interface HomeRepoI {
 
-    suspend fun getCompetition(
+    suspend fun returnOrder(
+        customerId: Int,
+        code: Int,
         serial: Int,
-        transCode: Int,
-        transYear: Int
-    ): CompetitionList
-
-    suspend fun checkWorkStatus(): WorkState
+        year: Int,
+        hourCode: Int,
+    ): String
 
 }

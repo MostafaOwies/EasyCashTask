@@ -9,12 +9,9 @@ import retrofit2.http.POST
 
 interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @POST(Constants.INSTALLATION)
-    suspend fun getCompetitions(@Body apiInstallationPaymentParams: ApiInstallationPaymentParams): ApiCompetitionList
-
-    @Headers("${ApiParameters.ACCEPT}: application/json")
-    @GET(Constants.CHECK_WORK_STATE)
-    suspend fun checkWorkState(): ApiWorkState
-
+    @POST(Constants.RETURN_ORDER)
+    suspend fun returnOrder(
+        @Body apiReturnParam: ApiReturnParam,
+    ): ApiMessage
 
 }

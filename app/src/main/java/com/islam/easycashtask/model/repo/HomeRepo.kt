@@ -2,7 +2,7 @@ package com.islam.easycashtask.model.repo
 
 import com.islam.easycashtask.model.competition.ApiCheckWorkStatusMapper
 import com.islam.easycashtask.model.competition.ApiCompetitionMapper
-import com.islam.easycashtask.model.competition.ApiInstallationPaymentParams
+import com.islam.easycashtask.model.competition.ApiReturnParam
 import com.islam.easycashtask.model.competition.CompetitionAPI
 import com.islam.easycashtask.model.competition.CompetitionList
 import com.islam.easycashtask.model.competition.WorkState
@@ -14,32 +14,25 @@ class HomeRepo @Inject constructor(
     private val competitionAPI: CompetitionAPI,
     private val apiCheckWorkStatusMapper: ApiCheckWorkStatusMapper,
 ) : HomeRepoI {
-    override suspend fun getCompetition(
+    override suspend fun returnOrder(
+        customerId: Int,
+        code: Int,
         serial: Int,
-        transCode: Int,
-        transYear: Int
-    ): CompetitionList {
+        year: Int,
+        hourCode: Int,
+    ): String {
         try {
-            return apiCompetitionMapper.mapToDomain(
-                competitionAPI.getCompetitions(
-                    ApiInstallationPaymentParams(
-                        serial = serial,
-                        transCode = transCode,
-                        transYear = transYear
-                    )
+            return competitionAPI.returnOrder(
+                ApiReturnParam(
+                    customerId = customerId,
+                    code = code,
+                    serial = serial,
+                    year = year,
+                    hourCode = hourCode
                 )
-            )
+            ).message.orEmpty()
         } catch (exception: HttpException) {
             throw (exception)
-        }
-    }
-
-
-    override suspend fun checkWorkStatus(): WorkState {
-        try {
-            return apiCheckWorkStatusMapper.mapToDomain(competitionAPI.checkWorkState())
-        } catch (e: HttpException) {
-            throw (e)
         }
     }
 }

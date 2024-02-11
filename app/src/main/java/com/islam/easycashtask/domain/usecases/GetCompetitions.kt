@@ -1,26 +1,24 @@
 package com.islam.easycashtask.domain.usecases
 
-import com.islam.easycashtask.model.competition.CompetitionList
-import com.islam.easycashtask.model.competition.WorkState
 import com.islam.easycashtask.model.repo.HomeRepoI
 import javax.inject.Inject
 
 class GetCompetitions @Inject constructor(
     private val homeRepoI: HomeRepoI
 ) {
-/*    suspend operator fun invoke(
+    suspend operator fun invoke(
+        customerId: Int,
+        code: Int,
         serial: Int,
-        transCode: Int,
-        transYear: Int
-    ): CompetitionList {
-        return homeRepoI.getCompetition(
+        year: Int,
+        hourCode: Int
+    ): String {
+        return homeRepoI.returnOrder(
+            customerId = customerId,
+            code = code,
             serial = serial,
-            transCode = transCode,
-            transYear = transYear
+            year = year,
+            hourCode = hourCode
         )
-    }*/
-
-    suspend operator fun invoke(): WorkState {
-        return homeRepoI.checkWorkStatus()
     }
 }
