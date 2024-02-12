@@ -6,7 +6,7 @@ object Constants {
     const val INSTALLATION: String = "WebInstallationPayment"
     const val COMPETITION_DETAILS_SCREEN = "competitionDetailsScreen"
     const val COMPETITION_SCREEN = "competitionScreen"
-    const val CHECK_WORK_STATE: String = "Work/CheckStartWork"
+    const val CHECK_VISIT_RETURN_ORDER: String = "Work/CheckVisitReturnOrder"
 
 }
 
