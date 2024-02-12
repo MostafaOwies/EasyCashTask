@@ -28,7 +28,6 @@ fun CompetitionsScreen(
     competitionViewModel.onEvent(CompetitionEvent.LoadCompetitions)
     val state = competitionViewModel.state.collectAsState().value
 
-    Log.d(ContentValues.TAG, "HomeScreen: ${state.workStartedAt}")
     Log.d(ContentValues.TAG, "HomeScreen: ${state.workStatus}")
 
 
@@ -38,21 +37,5 @@ fun CompetitionsScreen(
         color = MaterialTheme.colorScheme.surfaceColorAtElevation(5.dp),
     ) {
 
-        /*LazyColumn(
-                modifier = Modifier
-                        .background(MaterialTheme.colorScheme.surface)
-                        .padding(all = 12.dp),
-                verticalArrangement = Arrangement.spacedBy(20.dp)
-        ) {
-
-            items(
-                    items = state.competitions,
-                    key = { *//*it.id*//* }
-            ) {
-                CompetitionCard(
-                        competition = it,
-                        onCompetitionClick = onCompetitionClick
-                )
-            }*/
     }
 }

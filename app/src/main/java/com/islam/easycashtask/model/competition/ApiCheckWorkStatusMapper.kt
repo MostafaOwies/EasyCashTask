@@ -7,16 +7,11 @@ import javax.inject.Inject
 class ApiCheckWorkStatusMapper @Inject constructor() : ApiMapper<ApiWorkState, WorkState> {
 
     override fun mapToDomain(apiEntity: ApiWorkState): WorkState {
-        val details = apiEntity.data?.details
         return WorkState(
-            message = apiEntity.message.orEmpty(), data = WorkStateData(
-                status = apiEntity.data?.status.orEmpty(), details = WorkStateDetails(
-                    id = details?.id.orEmpty(),
-                    date = details?.date.orEmpty(),
-                    startTime = details?.startTime.orEmpty(),
-                    requestEndTime = details?.requestEndTime.orEmpty(),
-                    endTime = details?.endTime.orEmpty()
-                )
+            message = apiEntity.message.orEmpty(),
+            status = apiEntity.status.orEmpty(),
+            data = WorkStateData(
+                status = apiEntity.data?.status.orEmpty()
             )
         )
     }

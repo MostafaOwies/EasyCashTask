@@ -20,34 +20,14 @@ data class Competition(
 
 data class WorkState(
         val message: String,
+        val status: String,
         val data: WorkStateData,
 )
 
 data class WorkStateData(
         val status: String,
-        val details: WorkStateDetails,
 )
 
-data class WorkStateDetails(
-        val id: String,
-        val date: String,
-        val startTime: String,
-        val requestEndTime: String,
-        val endTime: String
-)
 
-data class EndWorkData(
-        val status: WorkStatus
-) {
-        // todo wait to complete all status from backend
-        enum class WorkStatus {
-                // pending means already user started work and has sent request to end work
-                 PENDING,
-                // accept mean work ended and admin has accepted or not started yet
-                ACCEPT,
-                // NOT_STARTED,
-                STARTED
-        }
-}
 
 
