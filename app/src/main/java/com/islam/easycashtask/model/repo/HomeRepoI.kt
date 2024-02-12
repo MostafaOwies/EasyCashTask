@@ -1,16 +1,12 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.CompetitionList
-import com.islam.easycashtask.model.competition.WorkState
-
 interface HomeRepoI {
 
-    suspend fun returnOrder(
+    suspend fun postponeOrder(
         customerId: Int,
         code: Int,
         serial: Int,
         year: Int,
-        hourCode: Int,
     ): String
 
 }

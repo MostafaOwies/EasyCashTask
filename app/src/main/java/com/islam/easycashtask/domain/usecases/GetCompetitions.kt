@@ -13,12 +13,11 @@ class GetCompetitions @Inject constructor(
         year: Int,
         hourCode: Int
     ): String {
-        return homeRepoI.returnOrder(
+        return homeRepoI.postponeOrder(
             customerId = customerId,
             code = code,
             serial = serial,
-            year = year,
-            hourCode = hourCode
+            year = year
         )
     }
 }

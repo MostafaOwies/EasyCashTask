@@ -9,9 +9,9 @@ import retrofit2.http.POST
 
 interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @POST(Constants.RETURN_ORDER)
-    suspend fun returnOrder(
-        @Body apiReturnParam: ApiReturnParam,
+    @POST(Constants.POSTPONEMENT_ORDER)
+    suspend fun postponeOrder(
+        @Body apiPostponeParam: ApiPostponeParam,
     ): ApiMessage
 
 }
