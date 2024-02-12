@@ -14,26 +14,6 @@ class HomeRepo @Inject constructor(
     private val competitionAPI: CompetitionAPI,
     private val apiCheckWorkStatusMapper: ApiCheckWorkStatusMapper,
 ) : HomeRepoI {
-    override suspend fun getCompetition(
-        serial: Int,
-        transCode: Int,
-        transYear: Int
-    ): CompetitionList {
-        try {
-            return apiCompetitionMapper.mapToDomain(
-                competitionAPI.getCompetitions(
-                    ApiInstallationPaymentParams(
-                        serial = serial,
-                        transCode = transCode,
-                        transYear = transYear
-                    )
-                )
-            )
-        } catch (exception: HttpException) {
-            throw (exception)
-        }
-    }
-
 
     override suspend fun checkWorkStatus(): WorkState {
         try {
