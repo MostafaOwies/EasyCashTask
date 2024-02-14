@@ -12,6 +12,14 @@ data class ApiInstallationPaymentParams(
 )
 
 @JsonClass(generateAdapter = true)
+data class ApiCheckVisitReturnParam(
+        @field:Json(name = "customerId") val customerId: Int,
+        @field:Json(name = "transcode") val code: Int,
+        @field:Json(name = "serial") val serial: Int,
+        @field:Json(name = "transyear") val year: Int,
+)
+
+@JsonClass(generateAdapter = true)
 data class ApiCompetitionList(
 
         @field:Json(name = "message") val message: String?,
@@ -31,22 +39,13 @@ data class ApiCompetition(
 )
 
 @JsonClass(generateAdapter = true)
-data class ApiWorkState(
-        @field:Json(name = "message") val message: String?,
-        @field:Json(name = "data") val data: ApiWorkStateData?,
-)
-
-@JsonClass(generateAdapter = true)
-data class ApiWorkStateData(
+data class ApiCheckVisitReturn(
         @field:Json(name = "status") val status: String?,
-        @field:Json(name = "details") val details: ApiWorkStateDetails?,
+        @field:Json(name = "message") val message: String?,
+        @field:Json(name = "data") val data: ApiCheckVisitReturnData?,
 )
 
 @JsonClass(generateAdapter = true)
-data class ApiWorkStateDetails(
-        @field:Json(name = "id") val id: String?,
-        @field:Json(name = "date") val date: String?,
-        @field:Json(name = "start_time") val startTime: String?,
-        @field:Json(name = "request_end_time") val requestEndTime: String?,
-        @field:Json(name = "end_time") val endTime: String?,
+data class ApiCheckVisitReturnData(
+        @field:Json(name = "status") val status: String?,
 )

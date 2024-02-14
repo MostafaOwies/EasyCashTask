@@ -1,7 +1,7 @@
 package com.islam.easycashtask.model.repo
 
 import com.islam.easycashtask.model.competition.CompetitionList
-import com.islam.easycashtask.model.competition.WorkState
+import com.islam.easycashtask.model.competition.VisitReturn
 
 interface HomeRepoI {
 
@@ -11,6 +11,6 @@ interface HomeRepoI {
         transYear: Int
     ): CompetitionList
 
-    suspend fun checkWorkStatus(): WorkState
+    suspend fun checkVisitReturn(): VisitReturn
 
 }

@@ -3,8 +3,6 @@ package com.islam.easycashtask.presentation.compititons
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.islam.easycashtask.domain.usecases.GetCompetitions
-import com.islam.easycashtask.model.competition.CompetitionList
-import com.islam.easycashtask.model.competition.EndWorkData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,8 +32,7 @@ class CompetitionViewModel @Inject constructor(
             val response = getCompetitions()
             _state.update {oldState ->
                 oldState.copy(
-                    workStatus = response.data,
-                    workStartedAt = response.data.details,
+                    visitReturn = response
                 )
             }
         }

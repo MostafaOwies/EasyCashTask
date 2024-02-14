@@ -13,8 +13,8 @@ interface CompetitionAPI {
     suspend fun getCompetitions(@Body apiInstallationPaymentParams: ApiInstallationPaymentParams): ApiCompetitionList
 
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @GET(Constants.CHECK_WORK_STATE)
-    suspend fun checkWorkState(): ApiWorkState
+    @POST(Constants.CHECK_VISIT_RETURN_ORDER)
+    suspend fun checkWorkState(@Body apiCheckVisitReturnParam :ApiCheckVisitReturnParam): ApiCheckVisitReturn
 
 
 }

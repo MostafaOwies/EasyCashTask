@@ -18,22 +18,14 @@ data class Competition(
 )
 
 
-data class WorkState(
+data class VisitReturn(
+        val status :String,
         val message: String,
-        val data: WorkStateData,
+        val data: VisitReturnData,
 )
 
-data class WorkStateData(
+data class VisitReturnData(
         val status: String,
-        val details: WorkStateDetails,
-)
-
-data class WorkStateDetails(
-        val id: String,
-        val date: String,
-        val startTime: String,
-        val requestEndTime: String,
-        val endTime: String
 )
 
 data class EndWorkData(
