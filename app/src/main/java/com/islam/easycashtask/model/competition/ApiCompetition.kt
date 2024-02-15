@@ -20,5 +20,6 @@ data class ApiSaveParams(
 data class PromissoryItem(
     @field:Json(name = "serial") val serial: Int,
     @field:Json(name = "code") val code: Int,
+    @field:Json(name = "date") val date: String,
     @field:Json(name = "year") val year: Int,
 )

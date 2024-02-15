@@ -7,6 +7,6 @@ class GetCompetitions @Inject constructor(
     private val homeRepoI: HomeRepoI,
 ) {
     suspend operator fun invoke(): String {
-        return homeRepoI.postponeOrder()
+        return homeRepoI.save()
     }
 }

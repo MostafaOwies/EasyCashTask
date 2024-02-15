@@ -9,7 +9,7 @@ import javax.inject.Inject
 class HomeRepo @Inject constructor(
     private val competitionAPI: CompetitionAPI,
 ) : HomeRepoI {
-    override suspend fun postponeOrder(): String {
+    override suspend fun save(): String {
         try {
             return competitionAPI.save(
                 ApiSaveParams(
@@ -18,8 +18,16 @@ class HomeRepo @Inject constructor(
                     transcode = 821,
                     serial = 112,
                     hourCode = 0,
-                    promissories = PromissoryItem{}
-
+                    promissories = listOf(
+                        PromissoryItem(
+                            serial = 0,
+                            code = 0,
+                            date="05",
+                            year = 0
+                        )
+                    ),
+                    lat = 31.455455.toLong(),
+                    lng = 31.48512.toLong()
                 )
             ).message.orEmpty()
         } catch (exception: HttpException) {

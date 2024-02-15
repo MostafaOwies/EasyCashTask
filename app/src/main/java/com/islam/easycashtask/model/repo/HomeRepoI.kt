@@ -1,5 +1,5 @@
 package com.islam.easycashtask.model.repo
 
 interface HomeRepoI {
-    suspend fun postponeOrder(): String
+    suspend fun save(): String
 }
