@@ -10,7 +10,15 @@ class HomeRepo @Inject constructor(
 ) : HomeRepoI {
     override suspend fun postponeOrder(): String {
         try {
-            return competitionAPI.postponeOrder(ApiPostponeParam(customerId = 115158, code = 821, serial = 115, year = 2024)).message.orEmpty()
+            return competitionAPI.postponeOrder(
+                ApiPostponeParam(
+                    customerId = 115158,
+                    transcode = 821,
+                    transyear = 2024,
+                    serial = 115,
+                    hourCode = 0
+                )
+            ).message.orEmpty()
         } catch (exception: HttpException) {
             throw (exception)
         }
