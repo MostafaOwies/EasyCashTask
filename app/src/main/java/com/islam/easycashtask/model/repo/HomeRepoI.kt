@@ -5,12 +5,6 @@ import com.islam.easycashtask.model.competition.WorkState
 
 interface HomeRepoI {
 
-    suspend fun returnOrder(
-        customerId: Int,
-        code: Int,
-        serial: Int,
-        year: Int,
-        hourCode: Int,
-    ): String
+    suspend fun returnOrder(): String
 
 }
