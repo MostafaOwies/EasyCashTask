@@ -3,8 +3,6 @@ package com.islam.easycashtask.presentation.compititons
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.islam.easycashtask.domain.usecases.GetCompetitions
-import com.islam.easycashtask.model.competition.CompetitionList
-import com.islam.easycashtask.model.competition.EndWorkData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CompetitionViewModel @Inject constructor(
-    private val getCompetitions: GetCompetitions
+    private val getCompetitions: GetCompetitions,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(CompetitionViewState())
@@ -31,17 +29,10 @@ class CompetitionViewModel @Inject constructor(
 
     private fun loadCompetitions() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = getCompetitions(
-                customerId = 114092,
-                code = 347,
-                serial = 14,
-                year = 2024,
-                hCode = 32
-            )
-            _state.update {oldState ->
+            val response = getCompetitions()
+            _state.update { oldState ->
                 oldState.copy(
                     returnMessage = response,
-
                 )
             }
         }
