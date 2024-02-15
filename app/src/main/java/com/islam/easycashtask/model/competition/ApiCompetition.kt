@@ -12,8 +12,8 @@ data class ApiSaveParams(
     @field:Json(name = "serial") val serial: Int,
     @field:Json(name = "hourCode") val hourCode: Int,
     @field:Json(name = "promissories") val promissories: List<PromissoryItem>,
-    @field:Json(name = "lat") val lat: Long,
-    @field:Json(name = "lng") val lng: Long,
+    @field:Json(name = "lat") val lat: String,
+    @field:Json(name = "lng") val lng: String,
 )
 
 @JsonClass(generateAdapter = true)

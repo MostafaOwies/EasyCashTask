@@ -10,27 +10,41 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
+    @Provides
+    @AppScope
+    fun providesLoggingInterceptor(): HttpLoggingInterceptor {
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
+        return logging
+    }
+
+    @Provides
+    @AppScope
+    fun providesOkHttpClient(okHttpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(okHttpLoggingInterceptor)
+            .build()
+    }
+
+
 
     @Provides
     @AppScope
     @RetrofitQ
-    fun provideRetrofit(urlProvider: UrlProvider): Retrofit {
-        return Retrofit.Builder()
+    fun provideRetrofit(okHttpClient: OkHttpClient,urlProvider: UrlProvider): Retrofit {
+        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).client(okHttpClient)
+            .addConverterFactory(
+                GsonConverterFactory.create()
+            )
             .baseUrl(urlProvider.getBaseUrl())
-            /*.client(
-                OkHttpClient.Builder().addInterceptor { chain ->
-                    val request = chain.request().newBuilder()
-                        .addHeader("X-Auth-Token", "be846a379d404a53ad0f6099bca94f4e")
-                        .build()
-                    chain.proceed(request)
-                }.build()
-            )*/
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

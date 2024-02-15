@@ -26,8 +26,8 @@ class HomeRepo @Inject constructor(
                             year = 0
                         )
                     ),
-                    lat = 31.455455.toLong(),
-                    lng = 31.48512.toLong()
+                    lat = "31.455455",
+                    lng = "31.48512"
                 )
             ).message.orEmpty()
         } catch (exception: HttpException) {
