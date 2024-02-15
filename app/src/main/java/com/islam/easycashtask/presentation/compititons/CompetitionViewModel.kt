@@ -36,7 +36,7 @@ class CompetitionViewModel @Inject constructor(
                 code = 347,
                 serial = 14,
                 year = 2024,
-                hourCode = 32
+                hCode = 32
             )
             _state.update {oldState ->
                 oldState.copy(

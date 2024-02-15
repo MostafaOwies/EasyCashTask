@@ -7,6 +7,7 @@ interface HomeRepoI {
         code: Int,
         serial: Int,
         year: Int,
+        hCode: Int,
     ): String
 
 }

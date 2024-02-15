@@ -6,10 +6,11 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class ApiPostponeParam(
-        @field:Json(name = "customer_id") val customerId: Int,
-        @field:Json(name = "code") val code: Int,
+        @field:Json(name = "customerId") val customerId: Int,
+        @field:Json(name = "transyear") val year: Int,
+        @field:Json(name = "transcode") val code: Int,
         @field:Json(name = "serial") val serial: Int,
-        @field:Json(name = "year") val year: Int
+        @field:Json(name = "hourCode") val hCode: Int
 )
 
 @JsonClass(generateAdapter = true)

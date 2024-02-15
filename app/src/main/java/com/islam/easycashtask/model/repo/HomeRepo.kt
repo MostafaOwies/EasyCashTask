@@ -17,6 +17,7 @@ class HomeRepo @Inject constructor(
         code: Int,
         serial: Int,
         year: Int,
+        hCode:Int
     ): String {
         try {
             return competitionAPI.postponeOrder(
@@ -24,7 +25,8 @@ class HomeRepo @Inject constructor(
                     customerId = customerId,
                     code = code,
                     serial = serial,
-                    year = year
+                    year = year,
+                    hCode = hCode
                 )
             ).message.orEmpty()
         } catch (exception: HttpException) {
