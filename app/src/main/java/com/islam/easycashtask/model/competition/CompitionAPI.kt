@@ -8,9 +8,6 @@ import retrofit2.http.POST
 
 interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @POST(Constants.SAVE)
-    suspend fun save(
-        @Body save: ApiSaveParams,
-    ): ApiMessage
-
+    @POST(Constants.UPDATE_LOCATION)
+    suspend fun correctLocation(@Body params: RecorrectLocationParams)
 }

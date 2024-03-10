@@ -6,6 +6,8 @@ object Constants {
     const val COMPETITION_DETAILS_SCREEN = "competitionDetailsScreen"
     const val COMPETITION_SCREEN = "competitionScreen"
     const val SAVE: String = "Visit/Save"
+    const val UPDATE_LOCATION = "customersNotConfirmedUpdate"
+
 
 }
 
