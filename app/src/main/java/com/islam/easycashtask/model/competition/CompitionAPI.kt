@@ -8,6 +8,6 @@ import retrofit2.http.POST
 
 interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @POST(Constants.DETAILS)
-    suspend fun getJobDetails(@Body params: ApiDetailsParams): ApiDetailsResponse
+    @POST(Constants.ARRIVED)
+    suspend fun arrived(@Body params: ApiArrivedParam): ApiMessage
 }

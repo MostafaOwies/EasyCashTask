@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetCompetitions @Inject constructor(
     private val homeRepoI: HomeRepoI,
 ) {
-    suspend operator fun invoke(): DetailsResponse {
-        return homeRepoI.reCorrectLocationApi()
+    suspend operator fun invoke(): String {
+        return homeRepoI.arrivedToClientLocation()
     }
 }

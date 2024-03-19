@@ -1,24 +1,24 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.ApiDetailsParams
-import com.islam.easycashtask.model.competition.ApiJobOrderDetailsMapper
+import com.islam.easycashtask.model.competition.ApiArrivedParam
 import com.islam.easycashtask.model.competition.CompetitionAPI
-import com.islam.easycashtask.model.competition.DetailsResponse
 import retrofit2.HttpException
 import javax.inject.Inject
 
 class HomeRepo @Inject constructor(
     private val competitionAPI: CompetitionAPI,
-    private val jobOrderDetailsMapper: ApiJobOrderDetailsMapper,
 
     ) : HomeRepoI {
-    override suspend fun reCorrectLocationApi(): DetailsResponse {
+    override suspend fun arrivedToClientLocation(): String {
         try {
-            return jobOrderDetailsMapper.mapToDomain(
-                competitionAPI.getJobDetails(
-                    ApiDetailsParams(9394, 1)
+            return competitionAPI.arrived(
+                ApiArrivedParam(
+                    7394,
+                    1,
+                    "31.157994",
+                    "30.264548"
                 )
-            )
+            ).message.orEmpty()
         } catch (exception: HttpException) {
             throw (exception)
         }
