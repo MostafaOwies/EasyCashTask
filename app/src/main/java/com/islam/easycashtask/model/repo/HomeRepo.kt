@@ -1,8 +1,8 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.ApiSmsParams
 import com.islam.easycashtask.model.competition.CompetitionAPI
-import com.islam.easycashtask.model.competition.SendSmsResponse
+import com.islam.easycashtask.model.competition.HourItem
+import com.islam.easycashtask.model.competition.Hours
 import retrofit2.HttpException
 import javax.inject.Inject
 
@@ -11,24 +11,21 @@ class HomeRepo @Inject constructor(
 
 
     ) : HomeRepoI {
-    override suspend fun sendSmsToClient(): SendSmsResponse {
+    override suspend fun getHours(): Hours {
         try {
-            val (message, code) = competitionAPI.senSmsToClient(
-                ApiSmsParams(
-                    113501,
-                    28655,
-                    821,
-                    2024,
-                    115,
-                    "phone"
-                )
-            )
-            return SendSmsResponse(
+            val (message, list) = competitionAPI.getHours()
+            return Hours(
                 message = message.orEmpty(),
-                code = code.orEmpty()
+                hoursList = list?.map {
+                    HourItem(
+                        hour = it.hour.orEmpty(),
+                        hourCode = it.hourCode.orEmpty()
+                    )
+                }.orEmpty()
             )
         } catch (exception: HttpException) {
             throw (exception)
         }
     }
+
 }

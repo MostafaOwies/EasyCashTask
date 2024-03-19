@@ -1,8 +1,8 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.SendSmsResponse
+import com.islam.easycashtask.model.competition.Hours
 
 
 interface HomeRepoI {
-    suspend fun sendSmsToClient(): SendSmsResponse
+    suspend fun getHours(): Hours
 }

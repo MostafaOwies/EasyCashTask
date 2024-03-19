@@ -8,10 +8,8 @@ import retrofit2.http.POST
 
 interface CompetitionAPI {
     @Headers("${ApiParameters.ACCEPT}: application/json")
-    @POST(Constants.SEND_CODE)
-    suspend fun senSmsToClient(
-        @Body apiSmsParam: ApiSmsParams
-    ): ApiSendSmsResponse
+    @POST(Constants.HOURS_CODE)
+    suspend fun getHours(): ApiHours
 }
 
 

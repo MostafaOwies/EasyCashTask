@@ -5,17 +5,13 @@ import com.squareup.moshi.JsonClass
 
 
 @JsonClass(generateAdapter = true)
-data class ApiSmsParams(
-    @field:Json(name = "customerId") val customerId: Int,
-    @field:Json(name = "proccessId") val proccessId: Int,
-    @field:Json(name = "transcode") val transcode: Int,
-    @field:Json(name = "transyear") val transyear: Int,
-    @field:Json(name = "serial") val serial: Int,
-    @field:Json(name = "phone") val phone: String,
+data class ApiHours(
+    @field:Json(name = "message") val message: String?,
+    @field:Json(name = "data") val hoursList: List<ApiHourItem>?,
 )
 
 @JsonClass(generateAdapter = true)
-data class ApiSendSmsResponse(
-    @field:Json(name = "message" ) val message: String?,
-    @field:Json(name = "data" ) val code: String?
+data class ApiHourItem(
+    @field:Json(name = "HourCode") val hourCode: String?,
+    @field:Json(name = "Hour") val hour: String?
 )

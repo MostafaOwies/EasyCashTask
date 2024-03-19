@@ -1,9 +1,9 @@
 package com.islam.easycashtask.presentation.compititons
 
-import com.islam.easycashtask.model.competition.SendSmsResponse
+import com.islam.easycashtask.model.competition.Hours
 
 
 data class CompetitionViewState(
     val onUpdateSuccessFul: Boolean = false,
-    val smsMessage: SendSmsResponse? = null,
+    val hoursList: Hours = Hours("", emptyList()),
 )
