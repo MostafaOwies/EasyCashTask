@@ -1,13 +1,13 @@
 package com.islam.easycashtask.domain.usecases
 
-import com.islam.easycashtask.model.competition.DetailsResponse
+import com.islam.easycashtask.model.competition.CustomersLocationResponse
 import com.islam.easycashtask.model.repo.HomeRepoI
 import javax.inject.Inject
 
 class GetCompetitions @Inject constructor(
-    private val homeRepoI: HomeRepoI,
+    private val homeRepository: HomeRepoI,
 ) {
-    suspend operator fun invoke(): String {
-        return homeRepoI.arrivedToClientLocation()
+    suspend operator fun invoke(): CustomersLocationResponse {
+        return homeRepository.getCustomersLocation()
     }
 }
