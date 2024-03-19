@@ -13,5 +13,6 @@ fun CompetitionsScreen() {
     competitionViewModel.onEvent(CompetitionEvent.LoadCompetitions)
     val state = competitionViewModel.state.collectAsState().value
 
-    Log.d(ContentValues.TAG, "HomeScreen: ${state.details}")
+    Log.d(ContentValues.TAG, "HomeScreen next Job Order: ${state.nextJobOrder}")
+    Log.d(ContentValues.TAG, "HomeScreen not Confirmed Customers: ${state.notConfirmedCustomers}")
 }

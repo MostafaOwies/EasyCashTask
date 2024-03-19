@@ -32,7 +32,8 @@ class CompetitionViewModel @Inject constructor(
             val response = getCompetitions()
             _state.update { oldState ->
                 oldState.copy(
-                    details = response,
+                    notConfirmedCustomers = response.notConfirmedCustomers,
+                    nextJobOrder = response.nextJobOrder
                 )
             }
         }

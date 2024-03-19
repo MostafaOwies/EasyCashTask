@@ -1,7 +1,7 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.DetailsResponse
+import com.islam.easycashtask.model.competition.DailyJobOrders
 
 interface HomeRepoI {
-    suspend fun reCorrectLocationApi(): DetailsResponse
+    suspend fun getDailyJobOrders(): DailyJobOrders
 }
