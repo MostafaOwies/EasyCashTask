@@ -1,8 +1,8 @@
 package com.islam.easycashtask.model.repo
 
-import com.islam.easycashtask.model.competition.CustomersLocationResponse
+import com.islam.easycashtask.model.competition.SendSmsResponse
 
 
 interface HomeRepoI {
-    suspend fun getCustomersLocation(): CustomersLocationResponse
+    suspend fun sendSmsToClient(): SendSmsResponse
 }

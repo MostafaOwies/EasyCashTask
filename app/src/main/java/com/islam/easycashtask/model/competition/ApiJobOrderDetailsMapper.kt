@@ -3,6 +3,7 @@ package com.islam.easycashtask.model.competition
 import com.islam.easycashtask.model.ApiMapper
 import javax.inject.Inject
 
+/*
 class ApiCustomerLocationsMapper @Inject constructor() :
     ApiMapper<ApiCustomersLocationsResponse, CustomersLocationResponse> {
 
@@ -45,4 +46,4 @@ class ApiCustomerLocationsMapper @Inject constructor() :
             )
         )
     }
-}
+}*/

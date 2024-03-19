@@ -32,7 +32,7 @@ class CompetitionViewModel @Inject constructor(
             val response = getCompetitions()
             _state.update { oldState ->
                 oldState.copy(
-                    customersList = getCompetitions().customers
+                    smsMessage =response
                 )
             }
         }
